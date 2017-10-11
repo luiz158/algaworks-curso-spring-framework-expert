@@ -13,6 +13,7 @@ import javax.sql.DataSource;
 
 import org.apache.http.HttpHeaders;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -69,7 +70,7 @@ public class RelatoriosController {
 		byte[] retorno = JasperExportManager.exportReportToPdf(jasperPrint);
 		
 		return ResponseEntity.ok()
-				.header(HttpHeaders.CONTENT_TYPE, "application/pdf")
+				.header(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_PDF_VALUE)
 				.body(retorno);
 	}
 }
