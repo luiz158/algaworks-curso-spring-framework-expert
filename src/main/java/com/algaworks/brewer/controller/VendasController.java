@@ -64,10 +64,10 @@ public class VendasController {
 	@Autowired
 	private Mailer mailer;
 	
-	@InitBinder("venda")
-	public void inicializarValidador(WebDataBinder binder) {
-		binder.setValidator(vendaValidator);
-	}
+//	@InitBinder("venda")
+//	public void inicializarValidador(WebDataBinder binder) {
+//		binder.setValidator(vendaValidator);
+//	}
 	
 	@GetMapping("/nova")
 	public ModelAndView nova(Venda venda) {
